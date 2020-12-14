@@ -12,17 +12,19 @@
   h1 {
     font-size: 1.5em;
     padding-top: 1rem;
+    margin-top: 0;
 
     @media only screen and (min-width: 400px) {
       font-size: 2em;
     }
+
+    @media only screen and (min-width: 768px) {
+      margin-top: unset;
+    }
   }
 
   .toggle-icon {
-    position: absolute;
-    font-size: 2.2em;
-    right: 0;
-    top: 0;
+    display: none;
   }
   
   .toggle-text {
@@ -31,6 +33,7 @@
 
   @media only screen and (min-width: 1200px) {
     .toggle-icon {
+      display: block;
       font-size: 2.7em;
       cursor: pointer;
       margin: 4px 12;

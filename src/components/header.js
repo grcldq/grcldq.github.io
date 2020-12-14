@@ -8,12 +8,16 @@ import ContactIcons from './contact-icons'
 export default function Header() {
   const textToggle = React.useRef()
 
+  function isMobile() {
+    return window.innerWidth < 1200
+  }
+
   function showText() {
-    textToggle.current.style.display = 'block'
+    if (!isMobile) textToggle.current.style.display = 'block'
   }
 
   function hideText() {
-    textToggle.current.style.display = 'none'
+    if (!isMobile) textToggle.current.style.display = 'none'
   }
 
   return (
