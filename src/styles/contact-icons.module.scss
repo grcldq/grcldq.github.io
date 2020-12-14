@@ -1,0 +1,24 @@
+@import './themes.scss';
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0.5rem 0 0;
+
+  .link {
+    color: var(--primary-icons);
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: 0 4px;
+  }
+
+  .link:hover {
+    color: var(--primary-icons-hover);
+  }
+
+  ul,
+  li {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}

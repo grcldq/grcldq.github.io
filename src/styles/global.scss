@@ -1,0 +1,317 @@
+@import './themes.scss';
+@import './typewriter.scss';
+
+html,
+body {
+  background-color: var(--primary-bg);
+  width: 100vw;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  cursor: default;
+}
+
+.link {
+  color: var(--primary-link);
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--primary-link-hover);
+    font-style: italic;
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /*if you want to crop the image*/
+}
+
+.container:before {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  content: ' ';
+  background-image: url('../data/images/grid.svg');
+  opacity: 0.03;
+  background-size: cover;
+}
+
+.grid-layout {
+  display: grid;
+  grid-gap: 1rem;
+  margin: 1rem 0;
+
+  .personal-photo {
+    margin: 0 1.5rem;
+    box-shadow: 0 0 0 4px var(--primary-bg), 0 0 0 5px var(--secondary-border);
+  }
+
+  .stack-list {
+    font-size: 2em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-top: 2rem;
+
+    .stack-item {
+      text-align: center;
+    }
+
+    .svg-icon {
+      filter: var(--filter-icon);
+      width: 2rem;
+      height: 2rem;
+
+      &:hover {
+        filter: var(--filter-icon-hover);
+      }
+    }
+  }
+
+  .about,
+  .experience {
+    background-color: rgba(var(--primary-container), 0.6);
+  }
+
+  .portfolio {
+    border-top: 1px solid var(--secondary-border);
+  }
+
+  .contact {
+    border-bottom: solid 1px var(--primary-border);
+  }
+
+  .col-container {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      color: var(--secondary-text);
+    }
+
+    input,
+    textarea {
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      border: 1px solid var(--secondary-border);
+      width: 100%;
+    }
+  }
+
+  button {
+    border: 0;
+    border-radius: 6px;
+    background-color: var(--primary-button);
+    color: var(--primary-button-text);
+    padding: 0.4rem 1rem;
+    width: 40%;
+    align-self: flex-end;
+
+    &:hover {
+      color: var(--primary-button-hover-text);
+      cursor: pointer;
+      background-color: var(--primary-button-hover);
+    }
+  }
+
+  @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0;
+    margin: 1rem;
+
+    .personal-photo {
+      margin: 0;
+
+      .image {
+        height: 100%;
+        width: auto;
+        margin-bottom: 0;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+
+    .portfolio {
+      border: 0;
+    }
+
+    .contact {
+      border: 0;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin: 1rem 4rem;
+
+    .personal-photo {
+      margin: 0;
+
+      .image {
+        height: 100%;
+        width: auto;
+        margin-bottom: 0;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+
+    .portfolio {
+      background-color: var(--primary-container);
+      border: 0;
+    }
+
+    .contact {
+      border: 0;
+    }
+
+    .stack {
+      border: solid 1px var(--primary-border);
+    }
+
+    .experience {
+      background-color: transparent;
+      border: solid 1px var(--primary-border);
+    }
+  }
+
+  @media only screen and (min-width: 1400px) and (max-width: 1600px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    margin: 1rem 8rem;
+
+    .portfolio-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .personal-photo {
+      margin: 0;
+
+      .image {
+        height: 100%;
+        width: auto;
+        margin-bottom: 0;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+
+    .about {
+      grid-column: 2/5;
+    }
+
+    .stack {
+      border: solid 1px var(--primary-border);
+      height: 100%;
+    }
+
+    .experience {
+      grid-column: 1/4;
+    }
+
+    .portfolio {
+      border-bottom: 1px solid var(--secondary-border);
+      grid-column: 1/6;
+      height: 100%;
+    }
+
+    .contact {
+      border: solid 1px var(--primary-border);
+      grid-column: 4/6;
+      height: 100%;
+    }
+
+    .stack-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      svg {
+        color: var(--secondary-icons);
+      }
+
+      svg:hover {
+        color: var(--secondary-icons-hover);
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1600px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    margin: 1rem 12rem;
+
+    .portfolio-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .personal-photo {
+      margin: 0;
+
+      .image {
+        height: 100%;
+        width: auto;
+        margin-bottom: 0;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+
+    .about {
+      grid-column: 2/5;
+    }
+
+    .stack {
+      border: solid 1px var(--primary-border);
+      height: 100%;
+    }
+
+    .experience {
+      grid-column: 1/4;
+    }
+
+    .portfolio {
+      border-bottom: 1px solid var(--secondary-border);
+      grid-column: 1/6;
+      height: 100%;
+    }
+
+    .contact {
+      border: solid 1px var(--primary-border);
+      grid-column: 4/6;
+      height: 100%;
+    }
+
+    .stack-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      svg:hover {
+        color: var(--primary-button-hover);
+      }
+    }
+  }
+}
