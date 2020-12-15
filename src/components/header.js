@@ -8,16 +8,16 @@ import ContactIcons from './contact-icons'
 export default function Header() {
   const textToggle = React.useRef()
 
-  function isMobile() {
-    return window.innerWidth < 1200
-  }
-
   function showText() {
-    if (!isMobile) textToggle.current.style.display = 'block'
+    textToggle.current.style.display = 'block'
   }
 
   function hideText() {
-    if (!isMobile) textToggle.current.style.display = 'none'
+    textToggle.current.style.display = 'none'
+  }
+
+  function isDarkModeOn(value) {
+    return value === 'dark'
   }
 
   return (
@@ -35,21 +35,23 @@ export default function Header() {
               <label
                 className={headerStyles.toggleIcon}
                 onMouseOver={showText}
+                onFocus={showText}
                 onMouseLeave={hideText}
+                role="presentation"
               >
-                {theme === 'dark' ? <WiSunset /> : <WiSolarEclipse />}
+                {isDarkModeOn(theme) ? <WiSunset /> : <WiSolarEclipse />}
                 <input
                   id="toggle"
                   type="checkbox"
                   onChange={e =>
                     toggleTheme(e.target.checked ? 'dark' : 'light')
                   }
-                  checked={theme === 'dark'}
+                  checked={isDarkModeOn(theme)}
                   style={{ position: 'absolute', left: '-100vw' }}
                 />
               </label>
               <p className={headerStyles.toggleText} ref={textToggle}>
-                Switch to {theme === 'dark' ? 'light' : 'dark'} mode
+                Switch to {isDarkModeOn(theme) ? 'light' : 'dark'} mode
               </p>
             </div>
           )}

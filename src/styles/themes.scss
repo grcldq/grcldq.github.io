@@ -37,6 +37,8 @@ body {
   --theme-1: #e7d3d3;
   --theme-2: #4b4444;
   --theme-3: #9e8f84;
+  --success: #84bb2b;
+  --failed: #bb5252;
 }
 
 body.dark {
@@ -81,4 +83,6 @@ body.dark {
   --theme-4: #f0807a;
   --theme-5: #f05454;
   --theme-6: #b8b961;
+  --success: #b4e763;
+  --failed: #bb5252;
 }

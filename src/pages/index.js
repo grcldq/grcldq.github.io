@@ -15,6 +15,7 @@ import {
 
 import ExperienceDetails from '../components/experience-details'
 import Footer from '../components/footer'
+import Form from '../components/form'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import PortfolioSample from '../components/portfolio-sample'
@@ -154,27 +155,7 @@ export default function Home() {
         </div>
         <div className="contact">
           <Layout title="contact">
-            <form
-              className="col-container"
-              name="contact"
-              method="POST"
-              data-netlify="true"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <label>
-                Name:
-                <input type="text" name="name" required />
-              </label>
-              <label>
-                Email:
-                <input type="email" name="email" required />
-              </label>
-              <label>
-                Message:
-                <textarea type="text" name="message" rows="4" required />
-              </label>
-              <button type="submit">Send</button>
-            </form>
+            <Form />
           </Layout>
         </div>
       </div>
