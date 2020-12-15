@@ -36,7 +36,7 @@ export default function PortfolioSample(props) {
           {props.technologies &&
             props.technologies.map((tech, i) => <Label item={tech} key={i} />)}
         </div>
-        <Link className="link" target="_blank" to={props.to}>
+        <Link className="link" target="_blank" rel="noopener" to={props.to}>
           Click here to see demo
         </Link>
       </div>

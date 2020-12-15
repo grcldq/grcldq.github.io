@@ -48,6 +48,10 @@ export default function Home() {
     <div className="container">
       <Helmet>
         <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="Web portfolio of Geraldine Atayan: Front End Developer"
+        />
         <title>Geraldine Atayan - Web Developer</title>
         <link rel="canonical" href="https://geraldineatayan.netlify.app" />
       </Helmet>
@@ -78,6 +82,7 @@ export default function Home() {
               className="link"
               to="https://ieeexplore.ieee.org/document/8228343"
               target="_blank"
+              rel="noopener"
             >
               TENCON 2017 IEEE Region 10 Conference, Penang, 2017
             </Link>

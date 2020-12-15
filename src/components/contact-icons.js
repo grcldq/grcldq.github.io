@@ -6,7 +6,12 @@ import contactIconsStyles from '../styles/contact-icons.module.scss'
 
 const ListLink = props => (
   <li style={{ display: `inline-block` }}>
-    <Link className={contactIconsStyles.link} target="_blank" to={props.to}>
+    <Link
+      className={contactIconsStyles.link}
+      target="_blank"
+      rel="noopener"
+      to={props.to}
+    >
       {props.children}
     </Link>
   </li>
@@ -21,9 +26,14 @@ export default function ContactIcons() {
       <ListLink to="https://github.com/gcla109">
         <FaGithub />
       </ListLink>
-      <ListLink to="mailto:geraldineatayan@gmail.com">
-        <FaEnvelope />
-      </ListLink>
+      <li style={{ display: `inline-block` }}>
+        <a
+          href="mailto:geraldineatayan@gmail.com"
+          className={contactIconsStyles.link}
+        >
+          <FaEnvelope />
+        </a>
+      </li>
     </ul>
   )
 }

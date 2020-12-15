@@ -10,7 +10,7 @@ export default function ExperienceDetails(props) {
         <div className={experienceStyles.verticalLine}></div>
       </div>
       <div className={experienceStyles.text}>
-        <h3>{props.establishment}</h3>
+        <h2>{props.establishment}</h2>
         <p>{props.title}</p>
       </div>
     </div>
