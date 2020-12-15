@@ -34,7 +34,7 @@ const Stack = props => (
 export default function Home() {
   const data = useStaticQuery(graphql`
     query {
-      profile: file(relativePath: { eq: "images/profile.JPG" }) {
+      profile: file(relativePath: { eq: "images/profile.jpeg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
