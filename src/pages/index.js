@@ -3,15 +3,6 @@ import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
 import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
-import { GrGatsbyjs } from 'react-icons/gr'
-import {
-  DiBootstrap,
-  DiCss3,
-  DiGit,
-  DiHtml5,
-  DiJsBadge,
-  DiSass,
-} from 'react-icons/di'
 
 import ExperienceDetails from '../components/experience-details'
 import Footer from '../components/footer'
@@ -19,16 +10,8 @@ import Form from '../components/form'
 import Header from '../components/header'
 import GridItem from '../components/grid-item'
 import PortfolioSample from '../components/portfolio-sample'
+import StackItem from '../components/stack-item'
 import JSONContent from '../data/content.json'
-
-import OpenWc from '../data/assets/openwc.svg'
-
-const Stack = props => (
-  <div className="stack-item">
-    {props.children}
-    <p style={{ fontSize: '16px', marginTop: '5px' }}>{props.text}</p>
-  </div>
-)
 
 export default function Home({ data }) {
   const {
@@ -40,6 +23,7 @@ export default function Home({ data }) {
     siteUrl,
     title,
     workExperience,
+    skillset,
   } = JSONContent
 
   return (
@@ -75,30 +59,14 @@ export default function Home({ data }) {
         </GridItem>
         <GridItem title="technologies" class="grid-stack">
           <div className="stack-list">
-            <Stack text="JavaScript">
-              <DiJsBadge />
-            </Stack>
-            <Stack text="HTML5">
-              <DiHtml5 />
-            </Stack>
-            <Stack text="CSS3">
-              <DiCss3 />
-            </Stack>
-            <Stack text="Git">
-              <DiGit />
-            </Stack>
-            <Stack text="Sass">
-              <DiSass />
-            </Stack>
-            <Stack text="Bootstrap">
-              <DiBootstrap />
-            </Stack>
-            <Stack text="Gatsby">
-              <GrGatsbyjs />
-            </Stack>
-            <Stack text="open-wc">
-              <OpenWc className="svg-icon" alt="open-wc logo" />
-            </Stack>
+            {skillset.map((item, index) => (
+              <StackItem
+                icon={item.icon}
+                isCustom={item.isCustom}
+                title={item.title}
+                key={item.title + index}
+              />
+            ))}
           </div>
         </GridItem>
         <GridItem title="portfolio" class="grid-portfolio">

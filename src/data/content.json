@@ -40,5 +40,40 @@
   "publication": {
     "url": "https://ieeexplore.ieee.org/document/8228343",
     "title": "TENCON 2017 IEEE Region 10 Conference, Penang, 2017"
-  }
+  },
+  "skillset": [
+    {
+      "title": "JavaScript",
+      "icon": "DiJsBadge"
+    },
+    {
+      "title": "HTML5",
+      "icon": "DiHtml5"
+    },
+    {
+      "title": "CSS3",
+      "icon": "DiCss3"
+    },
+    {
+      "title": "Git",
+      "icon": "DiGit"
+    },
+    {
+      "title": "Sass",
+      "icon": "DiSass"
+    },
+    {
+      "title": "Bootstrap",
+      "icon": "DiBootstrap"
+    },
+    {
+      "title": "Gatsby",
+      "icon": "GrGatsbyjs"
+    },
+    {
+      "title": "open-wc",
+      "icon": "open-wc",
+      "isCustom": true
+    }
+  ]
 }
