@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
 import { Link } from 'gatsby'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GrGatsbyjs } from 'react-icons/gr'
 import {
   DiBootstrap,
@@ -17,8 +17,9 @@ import ExperienceDetails from '../components/experience-details'
 import Footer from '../components/footer'
 import Form from '../components/form'
 import Header from '../components/header'
-import Layout from '../components/layout'
+import GridItem from '../components/grid-item'
 import PortfolioSample from '../components/portfolio-sample'
+import JSONContent from '../data/content.json'
 
 import OpenWc from '../data/assets/openwc.svg'
 
@@ -29,29 +30,25 @@ const Stack = props => (
   </div>
 )
 
-export default function Home() {
-  const data = useStaticQuery(graphql`
-    query {
-      profile: file(relativePath: { eq: "images/profile.jpeg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+export default function Home({ data }) {
+  const {
+    about,
+    description,
+    education,
+    portfolioItems,
+    publication,
+    siteUrl,
+    title,
+    workExperience,
+  } = JSONContent
 
   return (
     <div className="container">
       <Helmet>
         <meta charSet="utf-8" />
-        <meta
-          name="description"
-          content="Web portfolio of Geraldine Atayan: Front End Developer"
-        />
-        <title>Geraldine Atayan - Web Developer</title>
-        <link rel="canonical" href="https://geraldineatayan.netlify.app" />
+        <meta name="description" content={description} />
+        <title>{title}</title>
+        <link rel="canonical" href={siteUrl} />
       </Helmet>
       <Header />
       <div className="grid-layout">
@@ -63,106 +60,97 @@ export default function Home() {
             className="image"
           />
         </div>
-        <div className="about">
-          <Layout title="about">
-            <p style={{ textAlign: 'justify' }}>
-              I'm a front end developer focused on using JavaScript (ES6
-              practices). I graduated in 2017 with a Bachelor's Degree in
-              Information Systems from De La Salle University-Manila. I am
-              adaptable, and love to continuously improve myself, not only in
-              developing applications or knowledge on paper, but as well as my
-              personal growth. I am fluent in English, Filipino, and can read
-              and speak elementary level Mandarin.
-            </p>
-          </Layout>
-          <Layout title="publications">
-            <Link
-              className="link"
-              to="https://ieeexplore.ieee.org/document/8228343"
-              target="_blank"
-              rel="noopener"
-            >
-              TENCON 2017 IEEE Region 10 Conference, Penang, 2017
-            </Link>
-          </Layout>
-        </div>
-        <div className="stack">
-          <Layout title="technologies">
-            <div className="stack-list">
-              <Stack text="JavaScript">
-                <DiJsBadge />
-              </Stack>
-              <Stack text="HTML5">
-                <DiHtml5 />
-              </Stack>
-              <Stack text="CSS3">
-                <DiCss3 />
-              </Stack>
-              <Stack text="Git">
-                <DiGit />
-              </Stack>
-              <Stack text="Sass">
-                <DiSass />
-              </Stack>
-              <Stack text="Bootstrap">
-                <DiBootstrap />
-              </Stack>
-              <Stack text="Gatsby">
-                <GrGatsbyjs />
-              </Stack>
-              <Stack text="open-wc">
-                <OpenWc className="svg-icon" alt="open-wc logo" />
-              </Stack>
-            </div>
-          </Layout>
-        </div>
-        <div className="portfolio">
-          <Layout title="portfolio">
-            <div className="portfolio-items">
+        <GridItem title="about" class="grid-about">
+          <p style={{ textAlign: 'justify' }}>{about}</p>
+        </GridItem>
+        <GridItem title="publications" class="grid-publications">
+          <Link
+            className="link"
+            to={publication.url}
+            target="_blank"
+            rel="noopener"
+          >
+            {publication.title}
+          </Link>
+        </GridItem>
+        <GridItem title="technologies" class="grid-stack">
+          <div className="stack-list">
+            <Stack text="JavaScript">
+              <DiJsBadge />
+            </Stack>
+            <Stack text="HTML5">
+              <DiHtml5 />
+            </Stack>
+            <Stack text="CSS3">
+              <DiCss3 />
+            </Stack>
+            <Stack text="Git">
+              <DiGit />
+            </Stack>
+            <Stack text="Sass">
+              <DiSass />
+            </Stack>
+            <Stack text="Bootstrap">
+              <DiBootstrap />
+            </Stack>
+            <Stack text="Gatsby">
+              <GrGatsbyjs />
+            </Stack>
+            <Stack text="open-wc">
+              <OpenWc className="svg-icon" alt="open-wc logo" />
+            </Stack>
+          </div>
+        </GridItem>
+        <GridItem title="portfolio" class="grid-portfolio">
+          <div className="portfolio-items">
+            {portfolioItems.map((item, index) => (
               <PortfolioSample
-                image="covidtracker"
-                alt="A screenshot of the COVID Tracker site"
-                title="COVID-19 Tracker"
-                description="A case tracker for COVID-19"
-                technologies={['open-wc', 'lit-html', 'javascript', 'css']}
-                to="https://app-coronavirus-tracker.netlify.app/"
+                image={item.image}
+                alt={item.alt}
+                title={item.title}
+                description={item.description}
+                technologies={item.technologies}
+                to={item.url}
+                key={item.title + index}
               />
-            </div>
-          </Layout>
-        </div>
-        <div className="experience">
-          <Layout title="work experience">
+            ))}
+          </div>
+        </GridItem>
+        <GridItem title="work experience" class="grid-work">
+          {workExperience.map((item, index) => (
             <ExperienceDetails
-              establishment="ING Business Shared Services"
-              title="Web Engineer"
-            />
+              establishment={item.company}
+              title={item.position}
+              key={item.company + index}
+            ></ExperienceDetails>
+          ))}
+        </GridItem>
+        <GridItem title="education" class="grid-edu">
+          {education.map((item, index) => (
             <ExperienceDetails
-              establishment="Lotus Labs Inc."
-              title="Front End Developer"
-            />
-            <ExperienceDetails
-              establishment="Orange and Bronze Software Labs Inc."
-              title="Associate Software Engineer"
-            />
-          </Layout>
-          <Layout title="education">
-            <ExperienceDetails
-              establishment="Beijing Language and Culture University"
-              title="Chinese Language"
-            />
-            <ExperienceDetails
-              establishment="De La Salle University-Manila"
-              title="Bachelor of Science, Information Systems"
-            />
-          </Layout>
-        </div>
-        <div className="contact">
-          <Layout title="contact">
-            <Form />
-          </Layout>
-        </div>
+              establishment={item.school}
+              title={item.studies}
+              key={item.school + index}
+            ></ExperienceDetails>
+          ))}
+        </GridItem>
+        <GridItem title="contact" class="grid-contact">
+          <Form />
+        </GridItem>
       </div>
       <Footer />
     </div>
   )
 }
+
+export const query = graphql`
+  query {
+    profile: file(relativePath: { eq: "images/profile.jpeg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

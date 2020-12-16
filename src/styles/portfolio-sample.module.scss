@@ -3,6 +3,7 @@
 .portfolio {
   .sample-image {
     box-shadow: 0 0 0 4px var(--white), 0 0 0 5px var(--primary-border);
+    margin: 0 auto;
 
     @media only screen and (min-width: 768px) {
       width: 250px;
@@ -37,13 +38,22 @@
     align-items: center;
   }
 
+  @media only screen and (min-width: 1200px) {
+    .sample-image {
+      margin: unset;
+    }
+
+    .portfolio-details {
+      align-items: unset;
+      margin-top: 1rem;
+    }
+  }
+
   @media only screen and (min-width: 1400px) {
     display: flex;
 
     .portfolio-details {
-      align-items: unset;
       margin-left: 2rem;
-      margin-top: 1rem;
     }
   }
 }

@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: 'Geraldine Atayan - Web Developer',
     siteUrl: 'https://geraldineatayan.netlify.app',
-    description: 'A web portfolio created from scratch using Gatsby',
+    description: 'Web portfolio created by Geraldine Atayan using Gatsby.js',
   },
   plugins: [
     'gatsby-plugin-dark-mode',

@@ -3,7 +3,7 @@ body {
   --primary-container: 240, 228, 228;
 
   --primary-button: var(--theme-1);
-  --primary-button-hover: #d4adad;
+  --primary-button-hover: var(--theme-4);
   --primary-button-hover-text: var(--theme-2);
   --primary-button-text: var(--theme-2);
 
@@ -19,6 +19,8 @@ body {
 
   --primary-icons: var(--theme-3);
   --primary-icons-hover: #856a57;
+  --secondary-icons: var(--theme-2);
+  --secondary-icons-hover:  var(--theme-4);
 
   --circle: var(--theme-2);
   --vertical-line: #a78e8e;
@@ -37,6 +39,7 @@ body {
   --theme-1: #e7d3d3;
   --theme-2: #4b4444;
   --theme-3: #9e8f84;
+  --theme-4: #d4adad;
   --success: #84bb2b;
   --failed: #bb5252;
 }
@@ -72,8 +75,8 @@ body.dark {
   --label-text: var(--black);
   --header: var(--white);
 
-  --filter-icon: invert(100%) sepia(12%) saturate(7493%) hue-rotate(267deg)
-    brightness(116%) contrast(115%);
+  --filter-icon: invert(100%) sepia(22%) saturate(2278%) hue-rotate(302deg)
+    brightness(89%) contrast(76%);
   --filter-icon-hover: invert(82%) sepia(11%) saturate(1528%) hue-rotate(19deg)
     brightness(88%) contrast(85%);
 
