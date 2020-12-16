@@ -49,7 +49,7 @@ p {
 
 .grid-layout {
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 0 1rem;
   margin: 1rem 0;
 
   .personal-photo {
@@ -90,6 +90,11 @@ p {
   .grid-about,
   .grid-work {
     background-color: rgba(var(--primary-container), 0.6);
+  }
+
+  .grid-edu,
+  .grid-publications {
+    background-color: rgba(var(--primary-container), 0.4);
   }
 
   .grid-portfolio {
@@ -186,12 +191,12 @@ p {
 
   @media only screen and (min-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: .5rem;
+    grid-gap: 0.5rem;
     margin: 1rem;
 
     .personal-photo {
       box-shadow: unset;
-      margin: 0;
+      margin: 0.5rem 1rem;
       grid-row: 1/4;
 
       .image {
@@ -246,11 +251,6 @@ p {
       box-shadow: 0 0 0 4px var(--primary-bg), 0 0 0 5px var(--secondary-border);
     }
 
-    .grid-edu,
-    .grid-publications {
-      border: solid 1px var(--primary-border);
-    }
-
     .grid-portfolio {
       background-color: var(--primary-container);
       border: 0;
@@ -286,7 +286,6 @@ p {
     }
 
     .grid-publications {
-      border: solid 1px var(--primary-border);
       grid-row: 2/3;
     }
   }
@@ -294,6 +293,10 @@ p {
   @media only screen and (min-width: 1400px) {
     grid-template-columns: repeat(5, 1fr);
     margin: 1rem 8rem;
+
+    .personal-photo {
+      margin: 0.5rem;
+    }
 
     .portfolio-items {
       display: grid;
