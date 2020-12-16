@@ -29,8 +29,6 @@ const Stack = props => (
   </div>
 )
 
-// TODO: loading
-// TODO: 404 page
 export default function Home() {
   const data = useStaticQuery(graphql`
     query {
