@@ -11,4 +11,4 @@ gatsby develop
 
 ## Visit site
 
-[link here](https://geraldineatayan.netlify.app)
+[link here](https://grcldq.github.io/)
