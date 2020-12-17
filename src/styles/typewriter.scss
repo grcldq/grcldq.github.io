@@ -14,12 +14,13 @@
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
+  font-weight: 400;
 }
 
 /* Animation */
 .anim-typewriter {
-  animation: typewriter 1.2s steps(14) 1s 1 normal both,
-    blinkTextCursor 800ms steps(14) 7 normal;
+  animation: typewriter 1.2s steps(12) 1s 1 normal both,
+    blinkTextCursor 800ms steps(12) 7 normal;
 }
 
 @keyframes typewriter {
@@ -27,7 +28,18 @@
     width: 0;
   }
   to {
-    width: 6.6em;
+    width: 6.8em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 6.6em;
+    }
   }
 }
 
