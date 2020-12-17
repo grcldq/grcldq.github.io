@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import { MdOpenInNew } from 'react-icons/md'
 
 import portfolioSampleStyles from '../styles/portfolio-sample.module.scss';
 
@@ -37,7 +38,7 @@ export default function PortfolioSample(props) {
             props.technologies.map((tech, i) => <Label item={tech} key={i} />)}
         </div>
         <Link className="link" target="_blank" rel="noopener" to={props.to}>
-          Click here to see demo
+          Click here to see demo <MdOpenInNew />
         </Link>
       </div>
     </div>

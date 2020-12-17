@@ -8,6 +8,7 @@ import {
   MdCode,
   MdLibraryBooks,
   MdMail,
+  MdOpenInNew,
   MdPermMedia,
   MdSchool,
   MdWork,
@@ -67,7 +68,7 @@ export default function Home({ data }) {
             target="_blank"
             rel="noopener"
           >
-            {publication.title}
+            {publication.title} <MdOpenInNew />
           </Link>
         </GridItem>
         <GridItem

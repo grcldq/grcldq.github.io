@@ -30,6 +30,10 @@ p {
     color: var(--primary-link-hover);
     font-style: italic;
   }
+
+  svg {
+    padding-top: 1px;
+  }
 }
 
 .container {
