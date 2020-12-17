@@ -20,7 +20,7 @@ const ListLink = props => (
 export default function ContactIcons() {
   return (
     <ul className={contactIconsStyles.contactLinks}>
-      <ListLink to="https://www.linkedin.com/in/geraldine-atayan-324717135/">
+      <ListLink to="https://www.linkedin.com/in/geraldine-atayan/">
         <FaLinkedin />
       </ListLink>
       <ListLink to="https://github.com/grcldq">
