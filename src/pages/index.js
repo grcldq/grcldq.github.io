@@ -3,6 +3,15 @@ import Img from 'gatsby-image';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
+import {
+  MdAccountBox,
+  MdCode,
+  MdLibraryBooks,
+  MdMail,
+  MdPermMedia,
+  MdSchool,
+  MdWork,
+} from 'react-icons/md';
 
 import ExperienceDetails from '../components/experience-details';
 import Footer from '../components/footer';
@@ -44,10 +53,14 @@ export default function Home({ data }) {
             className="image"
           />
         </div>
-        <GridItem title="about" class="grid-about">
+        <GridItem title="about" class="grid-about" icon={<MdAccountBox />}>
           <p style={{ textAlign: 'justify' }}>{about}</p>
         </GridItem>
-        <GridItem title="publications" class="grid-publications">
+        <GridItem
+          title="publications"
+          class="grid-publications"
+          icon={<MdLibraryBooks />}
+        >
           <Link
             className="link"
             to={publication.url}
@@ -57,7 +70,12 @@ export default function Home({ data }) {
             {publication.title}
           </Link>
         </GridItem>
-        <GridItem title="technologies" class="grid-stack" isPadded={true}>
+        <GridItem
+          title="technologies"
+          class="grid-stack"
+          isPadded={true}
+          icon={<MdCode />}
+        >
           <div className="stack-list">
             {skillset.map((item, index) => (
               <StackItem
@@ -69,7 +87,11 @@ export default function Home({ data }) {
             ))}
           </div>
         </GridItem>
-        <GridItem title="sample projects" class="grid-portfolio">
+        <GridItem
+          title="sample projects"
+          class="grid-portfolio"
+          icon={<MdPermMedia />}
+        >
           <div className="portfolio-items">
             {portfolioItems.map((item, index) => (
               <PortfolioSample
@@ -84,7 +106,7 @@ export default function Home({ data }) {
             ))}
           </div>
         </GridItem>
-        <GridItem title="work experience" class="grid-work">
+        <GridItem title="work experience" class="grid-work" icon={<MdWork />}>
           {workExperience.map((item, index) => (
             <ExperienceDetails
               establishment={item.company}
@@ -93,7 +115,7 @@ export default function Home({ data }) {
             ></ExperienceDetails>
           ))}
         </GridItem>
-        <GridItem title="education" class="grid-edu">
+        <GridItem title="education" class="grid-edu" icon={<MdSchool />}>
           {education.map((item, index) => (
             <ExperienceDetails
               establishment={item.school}
@@ -102,7 +124,12 @@ export default function Home({ data }) {
             ></ExperienceDetails>
           ))}
         </GridItem>
-        <GridItem title="contact" class="grid-contact" isPadded={true}>
+        <GridItem
+          title="contact"
+          class="grid-contact"
+          isPadded={true}
+          icon={<MdMail />}
+        >
           <Form />
         </GridItem>
       </div>

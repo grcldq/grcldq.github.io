@@ -6,6 +6,10 @@ body {
   background-color: var(--primary-bg);
   width: 100vw;
   height: 100vh;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
 }
 
 h1,

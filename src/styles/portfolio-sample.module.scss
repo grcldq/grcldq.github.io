@@ -2,7 +2,7 @@
 
 .portfolio {
   .sample-image {
-    box-shadow: 0 0 0 4px var(--white), 0 0 0 5px var(--primary-border);
+    box-shadow: 0 0 0 4px var(--primary-bg), 0 0 0 5px var(--primary-border);
     margin: 0 auto;
 
     @media only screen and (min-width: 768px) {
@@ -12,9 +12,12 @@
   }
 
   h1 {
-    color: var(--quaternary-text);
+    color: unset;
     margin-bottom: 0;
     margin-top: 1rem;
+    margin-left: 0;
+    text-transform: unset;
+    letter-spacing: unset;
   }
 
   .label {

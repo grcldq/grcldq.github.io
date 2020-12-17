@@ -11,12 +11,23 @@
 
   h1 {
     color: var(--tertiary-text);
-    margin-bottom: 1rem;
     margin-top: 0;
+    margin-bottom: 0;
+    margin-left: .5rem;
     padding-top: 0;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 1.4em;
+  }
+
+  .title {
+    display: flex;
+    margin-bottom: 1rem;
+
+    svg {
+      color: var(--tertiary-icons);
+      font-size: 1.4em;
+    }
   }
 
   @media only screen and (min-width: 1024px) {

@@ -10,7 +10,10 @@ export default function GridItem(props) {
         props.class,
       ].join(' ')}
     >
-      <h1>{props.title}</h1>
+      <div className={styles.title}>
+        {props.icon}
+        <h1>{props.title}</h1>
+      </div>
       {props.children}
     </div>
   );
