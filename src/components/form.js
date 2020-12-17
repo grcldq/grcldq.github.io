@@ -1,17 +1,7 @@
 import React from 'react'
 import { FaExclamationCircle, FaRegTimesCircle } from 'react-icons/fa'
 
-// This function encodes the captured form data in the format that Netlify's backend requires
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
-
 export default function Form() {
-  const nameInput = React.useRef()
-  const emailInput = React.useRef()
-  const messageInput = React.useRef()
   const formAlert = React.useRef()
   const formText = React.useRef()
 
@@ -29,40 +19,32 @@ export default function Form() {
   }
 
   const handleSubmit = event => {
-    const name = { name: nameInput.current.value }
-    const email = { email: emailInput.current.value }
-    const message = { message: messageInput.current.value }
-
     event.preventDefault()
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': event.target.getAttribute('name'),
-        ...name,
-        ...email,
-        ...message,
-      }),
-    })
-      .then(() => {
+    const form = event.target
+    const data = new FormData(form)
+    const xhr = new XMLHttpRequest()
+    xhr.open(form.method, form.action)
+    xhr.setRequestHeader('Accept', 'application/json')
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return
+      if (xhr.status === 200) {
+        form.reset()
         updateFormAlert('Thank you! Your form has been received.', true)
-        document.getElementById('contactForm').reset()
-      })
-      .catch(() => {
+      } else {
         updateFormAlert('Oops. Something went wrong. ☹️', false)
-      })
+      }
+    }
+    xhr.send(data)
   }
 
   return (
     <form
+      action="https://formspree.io/f/xaylpgeo"
       className="col-container"
-      id="contactForm"
-      name="contact"
       method="POST"
-      data-netlify="true"
+      name="contact"
       onSubmit={handleSubmit}
     >
-      <input type="hidden" name="form-name" value="contact" />
       <div ref={formAlert} className="form-alert hidden">
         <FaExclamationCircle className="form-icon" />
         <p ref={formText}></p>
@@ -73,21 +55,15 @@ export default function Form() {
       </div>
       <label>
         Name:
-        <input type="text" name="name" ref={nameInput} required />
+        <input type="text" name="name" required />
       </label>
       <label>
         Email:
-        <input type="email" name="email" ref={emailInput} required />
+        <input type="email" name="email" required />
       </label>
       <label>
         Message:
-        <textarea
-          type="text"
-          name="message"
-          ref={messageInput}
-          rows="4"
-          required
-        />
+        <textarea type="text" name="message" rows="4" required />
       </label>
       <button type="submit">Send</button>
     </form>

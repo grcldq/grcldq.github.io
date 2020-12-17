@@ -9,7 +9,7 @@
 .line-1 {
   font-family: 'Sacramento', cursive;
   position: relative;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  border-right: 2px solid transparent;
   font-size: 180%;
   text-align: center;
   white-space: nowrap;
@@ -18,9 +18,10 @@
 
 /* Animation */
 .anim-typewriter {
-  animation: typewriter 1.2s steps(13) 1s 1 normal both,
-    blinkTextCursor 700ms steps(13) infinite normal;
+  animation: typewriter 1.2s steps(14) 1s 1 normal both,
+    blinkTextCursor 800ms steps(14) 7 normal;
 }
+
 @keyframes typewriter {
   from {
     width: 0;
