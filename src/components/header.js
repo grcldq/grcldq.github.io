@@ -1,23 +1,23 @@
-import React from 'react'
-import { ThemeToggler } from 'gatsby-plugin-dark-mode'
-import { WiSolarEclipse, WiSunset } from 'react-icons/wi'
+import React from 'react';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode';
+import { WiSolarEclipse, WiSunset } from 'react-icons/wi';
 
-import headerStyles from '../styles/header.module.scss'
-import ContactIcons from './contact-icons'
+import headerStyles from '../styles/header.module.scss';
+import ContactIcons from './contact-icons';
 
 export default function Header() {
-  const textToggle = React.useRef()
+  const textToggle = React.useRef();
 
   function showText() {
-    textToggle.current.style.display = 'block'
+    textToggle.current.style.display = 'block';
   }
 
   function hideText() {
-    textToggle.current.style.display = 'none'
+    textToggle.current.style.display = 'none';
   }
 
   function isDarkModeOn(value) {
-    return value === 'dark'
+    return value === 'dark';
   }
 
   return (
@@ -58,5 +58,5 @@ export default function Header() {
         </ThemeToggler>
       </div>
     </div>
-  )
+  );
 }

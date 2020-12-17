@@ -1,6 +1,6 @@
-import React from 'react'
-import footerStyles from '../styles/footer.module.scss'
-import ContactIcons from './contact-icons'
+import React from 'react';
+import footerStyles from '../styles/footer.module.scss';
+import ContactIcons from './contact-icons';
 
 export default function Footer() {
   return (
@@ -8,5 +8,5 @@ export default function Footer() {
       <p>© GERALDINE ATAYAN 2020</p>
       <ContactIcons />
     </div>
-  )
+  );
 }

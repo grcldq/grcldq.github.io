@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from '../styles/grid-item.module.scss'
+import React from 'react';
+import styles from '../styles/grid-item.module.scss';
 
 export default function GridItem(props) {
   return (
@@ -7,5 +7,5 @@ export default function GridItem(props) {
       <h1>{props.title}</h1>
       {props.children}
     </div>
-  )
+  );
 }

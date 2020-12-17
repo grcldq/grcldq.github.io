@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Helmet } from 'react-helmet'
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 const styles = {
   color: 'var(--primary-text)',
@@ -8,28 +8,28 @@ const styles = {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-}
+};
 
 const h1Styles = {
   color: 'var(--primary-icons)',
   fontSize: '10em',
   margin: '0',
-}
+};
 
-const h2Styles = { color: 'var(--secondary-text)' }
+const h2Styles = { color: 'var(--secondary-text)' };
 
 export default function Default() {
-  const [count, setCount] = useState(5)
+  const [count, setCount] = useState(5);
 
   if (count > 0) {
     setTimeout(
       function () {
-        setCount(count - 1)
+        setCount(count - 1);
       }.bind(this),
       1000
-    )
+    );
   } else {
-    window.location.href = '/'
+    window.location.href = '/';
   }
 
   return (
@@ -43,5 +43,5 @@ export default function Default() {
       <h2 style={h2Styles}>Page not found</h2>
       <p>Automatically redirecting in {count}...</p>
     </div>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa'
+import React from 'react';
+import { Link } from 'gatsby';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 
-import contactIconsStyles from '../styles/contact-icons.module.scss'
+import contactIconsStyles from '../styles/contact-icons.module.scss';
 
 const ListLink = props => (
   <li style={{ display: `inline-block` }}>
@@ -15,7 +15,7 @@ const ListLink = props => (
       {props.children}
     </Link>
   </li>
-)
+);
 
 export default function ContactIcons() {
   return (
@@ -35,5 +35,5 @@ export default function ContactIcons() {
         </a>
       </li>
     </ul>
-  )
+  );
 }

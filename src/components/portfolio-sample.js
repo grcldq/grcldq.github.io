@@ -1,13 +1,13 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
-import portfolioSampleStyles from '../styles/portfolio-sample.module.scss'
+import portfolioSampleStyles from '../styles/portfolio-sample.module.scss';
 
 const Label = prop => (
   <div className={portfolioSampleStyles.label}>{prop.item}</div>
-)
+);
 
 export default function PortfolioSample(props) {
   const data = useStaticQuery(graphql`
@@ -20,7 +20,7 @@ export default function PortfolioSample(props) {
         }
       }
     }
-  `)
+  `);
 
   return (
     <div className={portfolioSampleStyles.portfolio}>
@@ -41,5 +41,5 @@ export default function PortfolioSample(props) {
         </Link>
       </div>
     </div>
-  )
+  );
 }

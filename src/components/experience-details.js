@@ -1,6 +1,6 @@
-import React from 'react'
-import experienceStyles from '../styles/experience-details.module.scss'
-import { MdFiberManualRecord } from 'react-icons/md'
+import React from 'react';
+import experienceStyles from '../styles/experience-details.module.scss';
+import { MdFiberManualRecord } from 'react-icons/md';
 
 export default function ExperienceDetails(props) {
   return (
@@ -14,5 +14,5 @@ export default function ExperienceDetails(props) {
         <p>{props.title}</p>
       </div>
     </div>
-  )
+  );
 }

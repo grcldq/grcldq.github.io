@@ -1,17 +1,17 @@
-import React from 'react'
-import Img from 'gatsby-image'
-import { Helmet } from 'react-helmet'
-import { Link } from 'gatsby'
-import { graphql } from 'gatsby'
+import React from 'react';
+import Img from 'gatsby-image';
+import { Helmet } from 'react-helmet';
+import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
 
-import ExperienceDetails from '../components/experience-details'
-import Footer from '../components/footer'
-import Form from '../components/form'
-import Header from '../components/header'
-import GridItem from '../components/grid-item'
-import PortfolioSample from '../components/portfolio-sample'
-import StackItem from '../components/stack-item'
-import JSONContent from '../data/content.json'
+import ExperienceDetails from '../components/experience-details';
+import Footer from '../components/footer';
+import Form from '../components/form';
+import Header from '../components/header';
+import GridItem from '../components/grid-item';
+import PortfolioSample from '../components/portfolio-sample';
+import StackItem from '../components/stack-item';
+import JSONContent from '../data/content.json';
 
 export default function Home({ data }) {
   const {
@@ -24,7 +24,7 @@ export default function Home({ data }) {
     title,
     workExperience,
     skillset,
-  } = JSONContent
+  } = JSONContent;
 
   return (
     <div className="container">
@@ -108,7 +108,7 @@ export default function Home({ data }) {
       </div>
       <Footer />
     </div>
-  )
+  );
 }
 
 export const query = graphql`
@@ -121,4 +121,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

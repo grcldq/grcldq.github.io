@@ -1,41 +1,41 @@
-import React from 'react'
-import { FaExclamationCircle, FaRegTimesCircle } from 'react-icons/fa'
+import React from 'react';
+import { FaExclamationCircle, FaRegTimesCircle } from 'react-icons/fa';
 
 export default function Form() {
-  const formAlert = React.useRef()
-  const formText = React.useRef()
+  const formAlert = React.useRef();
+  const formText = React.useRef();
 
   const updateFormAlert = (text, isSuccess) => {
-    formText.current.innerHTML = text
-    formAlert.current.classList.remove('hidden')
+    formText.current.innerHTML = text;
+    formAlert.current.classList.remove('hidden');
 
     if (isSuccess) {
-      formAlert.current.classList.remove('failed')
-      formAlert.current.classList.add('success')
+      formAlert.current.classList.remove('failed');
+      formAlert.current.classList.add('success');
     } else {
-      formAlert.current.classList.remove('success')
-      formAlert.current.classList.add('failed')
+      formAlert.current.classList.remove('success');
+      formAlert.current.classList.add('failed');
     }
-  }
+  };
 
   const handleSubmit = event => {
-    event.preventDefault()
-    const form = event.target
-    const data = new FormData(form)
-    const xhr = new XMLHttpRequest()
-    xhr.open(form.method, form.action)
-    xhr.setRequestHeader('Accept', 'application/json')
+    event.preventDefault();
+    const form = event.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader('Accept', 'application/json');
     xhr.onreadystatechange = () => {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
       if (xhr.status === 200) {
-        form.reset()
-        updateFormAlert('Thank you! Your form has been received.', true)
+        form.reset();
+        updateFormAlert('Thank you! Your form has been received.', true);
       } else {
-        updateFormAlert('Oops. Something went wrong. ☹️', false)
+        updateFormAlert('Oops. Something went wrong. ☹️', false);
       }
-    }
-    xhr.send(data)
-  }
+    };
+    xhr.send(data);
+  };
 
   return (
     <form
@@ -67,5 +67,5 @@ export default function Form() {
       </label>
       <button type="submit">Send</button>
     </form>
-  )
+  );
 }
