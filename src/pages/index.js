@@ -69,7 +69,7 @@ export default function Home({ data }) {
             ))}
           </div>
         </GridItem>
-        <GridItem title="portfolio" class="grid-portfolio">
+        <GridItem title="sample projects" class="grid-portfolio">
           <div className="portfolio-items">
             {portfolioItems.map((item, index) => (
               <PortfolioSample

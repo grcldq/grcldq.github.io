@@ -23,7 +23,7 @@ export default function ContactIcons() {
       <ListLink to="https://www.linkedin.com/in/geraldine-atayan-324717135/">
         <FaLinkedin />
       </ListLink>
-      <ListLink to="https://github.com/gcla109">
+      <ListLink to="https://github.com/grcldq">
         <FaGithub />
       </ListLink>
       <li style={{ display: `inline-block` }}>

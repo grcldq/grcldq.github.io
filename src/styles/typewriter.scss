@@ -3,11 +3,11 @@
 /* code taken from https://css-tricks.com/snippets/css/typewriter-effect/ */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 /* Global */
 .line-1 {
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Sacramento', cursive;
   position: relative;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
   font-size: 180%;
@@ -18,15 +18,15 @@
 
 /* Animation */
 .anim-typewriter {
-  animation: typewriter 1.6s steps(15) 1s 1 normal both,
-    blinkTextCursor 500ms steps(26) infinite normal;
+  animation: typewriter 1.2s steps(13) 1s 1 normal both,
+    blinkTextCursor 700ms steps(13) infinite normal;
 }
 @keyframes typewriter {
   from {
     width: 0;
   }
   to {
-    width: 10.5em;
+    width: 6.6em;
   }
 }
 
