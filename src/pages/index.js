@@ -57,7 +57,7 @@ export default function Home({ data }) {
             {publication.title}
           </Link>
         </GridItem>
-        <GridItem title="technologies" class="grid-stack">
+        <GridItem title="technologies" class="grid-stack" isPadded={true}>
           <div className="stack-list">
             {skillset.map((item, index) => (
               <StackItem
@@ -102,7 +102,7 @@ export default function Home({ data }) {
             ></ExperienceDetails>
           ))}
         </GridItem>
-        <GridItem title="contact" class="grid-contact">
+        <GridItem title="contact" class="grid-contact" isPadded={true}>
           <Form />
         </GridItem>
       </div>

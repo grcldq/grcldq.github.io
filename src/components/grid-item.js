@@ -3,7 +3,13 @@ import styles from '../styles/grid-item.module.scss';
 
 export default function GridItem(props) {
   return (
-    <div className={[styles.container, props.class].join(' ')}>
+    <div
+      className={[
+        styles.container,
+        props.isPadded ? 'padded' : 'padded-sides',
+        props.class,
+      ].join(' ')}
+    >
       <h1>{props.title}</h1>
       {props.children}
     </div>

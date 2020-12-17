@@ -13,6 +13,7 @@ body {
   --primary-text: #796a6a;
   --secondary-text: var(--theme-2);
   --tertiary-text: #807373;
+  --quaternary-text: var(--black);
 
   --primary-link: #975555;
   --primary-link-hover: #9e5252;
@@ -59,6 +60,7 @@ body.dark {
   --primary-text: #cbbcb1;
   --secondary-text: #e8e8e8;
   --tertiary-text: var(--theme-4);
+  --quaternary-text: #e9c092;
 
   --primary-link: #e4c39d;
   --primary-link-hover: #e4c39d;
@@ -80,12 +82,11 @@ body.dark {
   --filter-icon-hover: invert(82%) sepia(11%) saturate(1528%) hue-rotate(19deg)
     brightness(88%) contrast(85%);
 
-  --theme-1: #222831;
-  --theme-2: 52, 62, 75;
+  --theme-1: #15171a;
   --theme-3: #e06f6f;
   --theme-4: #f0807a;
   --theme-5: #f05454;
-  --theme-6: #b8b961;
+  --theme-6: #c0c271;
   --success: #b4e763;
   --failed: #bb5252;
 }

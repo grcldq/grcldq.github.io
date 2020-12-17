@@ -87,16 +87,6 @@ p {
     }
   }
 
-  .grid-about,
-  .grid-work {
-    background-color: rgba(var(--primary-container), 0.6);
-  }
-
-  .grid-edu,
-  .grid-publications {
-    background-color: rgba(var(--primary-container), 0.4);
-  }
-
   .grid-portfolio {
     border-top: 1px solid var(--secondary-border);
   }
@@ -235,11 +225,6 @@ p {
       grid-column: unset;
     }
 
-    .grid-publications,
-    .grid-stack {
-      background-color: rgba(var(--primary-container), 0.6);
-    }
-
     .grid-about {
       grid-row: 1/2;
     }
@@ -276,15 +261,18 @@ p {
   @media only screen and (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
-    grid-gap: 1rem;
+    grid-gap: 2rem 1rem;
     margin: 1rem 4rem;
+
+    .padded {
+      padding: 1.5rem !important;
+    }
 
     .personal-photo {
       box-shadow: 0 0 0 4px var(--primary-bg), 0 0 0 5px var(--secondary-border);
     }
 
     .grid-portfolio {
-      background-color: var(--primary-container);
       border: 0;
       grid-row: 3/5;
       grid-column: 1/2;
@@ -322,7 +310,6 @@ p {
     }
 
     .grid-publications {
-      background-color: rgba(var(--primary-container), 0.4);
       grid-row: 2/3;
     }
   }
@@ -361,7 +348,6 @@ p {
     }
 
     .grid-portfolio {
-      border-bottom: 1px solid var(--secondary-border);
       grid-column: 1/6;
       grid-row: 3/4;
       height: 100%;
