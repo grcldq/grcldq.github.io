@@ -20,7 +20,7 @@
 /* Animation */
 .anim-typewriter {
   animation: typewriter 1.2s steps(12) 1s 1 normal both,
-    blinkTextCursor 800ms steps(12) 7 normal;
+    blinkTextCursor 810ms steps(12) 7 normal;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -29,7 +29,7 @@
       width: 0;
     }
     to {
-      width: 7.7em;
+      width: 7.4em;
     }
   }
 }
