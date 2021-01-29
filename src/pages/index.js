@@ -96,7 +96,7 @@ export default function Home({ data }) {
           <div className="portfolio-items">
             {portfolioItems.map((item, index) => (
               <PortfolioSample
-                image={item.image}
+                image={data[item.image].childImageSharp.fluid}
                 alt={item.alt}
                 title={item.title}
                 description={item.description}
@@ -142,6 +142,13 @@ export default function Home({ data }) {
 export const query = graphql`
   query {
     profile: file(relativePath: { eq: "images/profile.jpeg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    covidtracker: file(relativePath: { eq: "images/covidtracker.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

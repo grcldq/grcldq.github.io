@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { MdOpenInNew } from 'react-icons/md'
@@ -11,24 +10,12 @@ const Label = prop => (
 );
 
 export default function PortfolioSample(props) {
-  const data = useStaticQuery(graphql`
-    query {
-      covidtracker: file(relativePath: { eq: "images/covidtracker.png" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <div className={portfolioSampleStyles.portfolio}>
       <Img
         alt={props.alt}
         className={portfolioSampleStyles.sampleImage}
-        fluid={data[props.image].childImageSharp.fluid}
+        fluid={props.image}
       />
       <div className={portfolioSampleStyles.portfolioDetails}>
         <h1>{props.title}</h1>

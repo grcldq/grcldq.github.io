@@ -5,7 +5,7 @@ import ContactIcons from './contact-icons';
 export default function Footer() {
   return (
     <div className={footerStyles.footer}>
-      <p>© GERALDINE ATAYAN 2020</p>
+      <p>© GERALDINE ATAYAN 2021</p>
       <ContactIcons />
     </div>
   );
