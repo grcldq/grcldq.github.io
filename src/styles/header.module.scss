@@ -1,5 +1,9 @@
 @import './themes.scss';
 
+.container {
+  padding: 1rem 1rem 2rem;
+}
+
 .header {
   color: var(--header);
   display: flex;
@@ -7,7 +11,6 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding: 2rem 3rem 0 3rem;
 
   h1 {
     font-size: 2.5em;
@@ -28,7 +31,7 @@
   .toggle-icon {
     display: none;
   }
-  
+
   .toggle-text {
     display: none;
     font-size: 0.8em;
@@ -38,17 +41,63 @@
     margin: 4px 12px;
   }
 
-  @media only screen and (min-width: 1200px) {
-    .toggle-icon {
-      display: block;
-      font-size: 2.7em;
-      color: inherit;
-      cursor: pointer;
-      background: none;
-      border: none;
-      position: absolute;
-      right: 0;
-      top: 0;
+  .about {
+    margin: 1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    display: flex;
+
+    .header {
+      padding: 1rem;
     }
+  }
+
+  .image {
+    height: 350px;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 1rem;
+
+    img {
+      border-radius: 6px;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    padding: 3rem 0 4rem;
+
+    .header {
+      padding: 1rem 3rem 0 3rem;
+
+      .about {
+        margin: 1rem 4rem;
+      }
+    }
+  }
+
+  .image {
+    height: 100%;
+    width: 280px;
+  }
+
+  .toggle-icon {
+    display: block;
+    font-size: 2.7em;
+    color: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }

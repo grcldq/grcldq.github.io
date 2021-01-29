@@ -2,6 +2,7 @@ import React from 'react';
 import * as DiIcons from 'react-icons/di';
 import * as GrIcons from 'react-icons/gr';
 
+import styles from '../styles/stack-item.module.scss';
 import OpenWc from '../data/assets/openwc.svg';
 
 export default function StackItem({ icon, title, isCustom }) {
@@ -15,9 +16,9 @@ export default function StackItem({ icon, title, isCustom }) {
   };
 
   return (
-    <div className="stack-item">
+    <div className={styles.stackItem}>
       {React.createElement(getIcon(), {
-        className: isCustom ? 'svg-icon' : '',
+        className: isCustom ? styles.svgIcon : '',
       })}
       <p style={{ fontSize: '16px', marginTop: '5px' }}>{title}</p>
     </div>

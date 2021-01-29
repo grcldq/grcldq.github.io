@@ -1,21 +1,20 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { FaExclamationCircle, FaRegTimesCircle } from 'react-icons/fa';
 
+import styles from '../styles/form.module.scss';
+
 export default function Form() {
-  const formAlert = React.useRef();
-  const formText = React.useRef();
+  const formAlert = useRef();
+  const formText = useRef();
+  const [submitSuccessful, setSubmitSuccessful] = useState(false);
+  const [isAlertHidden, setIsAlertHidden] = useState(true);
 
   const updateFormAlert = (text, isSuccess) => {
     formText.current.innerHTML = text;
-    formAlert.current.classList.remove('hidden');
 
-    if (isSuccess) {
-      formAlert.current.classList.remove('failed');
-      formAlert.current.classList.add('success');
-    } else {
-      formAlert.current.classList.remove('success');
-      formAlert.current.classList.add('failed');
-    }
+    setIsAlertHidden(false);
+
+    isSuccess ? setSubmitSuccessful(true) : setSubmitSuccessful(false);
   };
 
   const handleSubmit = event => {
@@ -37,20 +36,32 @@ export default function Form() {
     xhr.send(data);
   };
 
+  const getAlertStyles = () => {
+    if (isAlertHidden) {
+      return [styles.formAlert, styles.hidden].join(' ');
+    }
+
+    if (submitSuccessful) {
+      return [styles.formAlert, styles.success].join(' ');
+    }
+
+    return [styles.formAlert, styles.failed].join(' ');
+  };
+
   return (
     <form
       action="https://formspree.io/f/xaylpgeo"
-      className="col-container"
+      className={styles.container}
       method="POST"
       name="contact"
       onSubmit={handleSubmit}
     >
-      <div ref={formAlert} className="form-alert hidden">
-        <FaExclamationCircle className="form-icon" />
+      <div ref={formAlert} className={getAlertStyles()}>
+        <FaExclamationCircle className={styles.formIcon} />
         <p ref={formText}></p>
         <FaRegTimesCircle
-          className="form-close-btn"
-          onClick={() => formAlert.current.classList.add('hidden')}
+          className={styles.formCloseBtn}
+          onClick={() => setIsAlertHidden(true)}
         />
       </div>
       <label>

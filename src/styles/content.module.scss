@@ -1,0 +1,21 @@
+.content {
+  .tech-stack {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    font-size: 3.5em;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .others {
+    display: grid;
+    grid-gap: 10px;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.stack-item {
+  text-align: center;
+
+  svg {
+    color: var(--secondary-icons);
+
+    &:hover {
+      color: var(--secondary-icons-hover);
+    }
+  }
+}
+
+.svg-icon {
+  filter: var(--filter-icon);
+  width: 3.5rem;
+  height: 3.5rem;
+
+  &:hover {
+    filter: var(--filter-icon-hover);
+  }
+}

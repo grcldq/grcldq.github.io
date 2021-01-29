@@ -13,7 +13,7 @@
     color: var(--tertiary-text);
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     padding-top: 0;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -35,6 +35,6 @@
   }
 
   @media only screen and (min-width: 1400px) {
-    padding: 0;
+    // padding: 0;
   }
 }

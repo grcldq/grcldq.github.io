@@ -1,0 +1,83 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .form-alert {
+    display: flex;
+    padding: 0.7rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--secondary-text);
+
+    &.success {
+      .form-icon {
+        color: var(--success);
+      }
+    }
+
+    &.failed {
+      .form-icon {
+        color: var(--failed);
+      }
+    }
+
+    svg {
+      font-size: 1.4em;
+
+      &.form-close-btn {
+        cursor: pointer;
+
+        &:hover {
+          color: var(--primary-link-hover);
+        }
+      }
+    }
+
+    p {
+      flex: 1;
+      margin-left: 7px;
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    &.success {
+      border: 2px dotted var(--success);
+    }
+
+    &.failed {
+      border: 2px dotted var(--failed);
+    }
+  }
+
+  label {
+    color: var(--secondary-text);
+  }
+
+  input,
+  textarea {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--secondary-border);
+    width: 100%;
+  }
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  background-color: var(--primary-button);
+  color: var(--primary-button-text);
+  padding: 0.4rem 1rem;
+  width: 40%;
+  align-self: flex-end;
+
+  &:hover {
+    color: var(--primary-button-hover-text);
+    cursor: pointer;
+    background-color: var(--primary-button-hover);
+  }
+}
