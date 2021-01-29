@@ -9,6 +9,7 @@ import StackItem from '../components/stack-item';
 import JSONContent from '../data/content.json';
 import {
   MdCode,
+  MdLanguage,
   MdLibraryBooks,
   MdMail,
   MdOpenInNew,
@@ -22,6 +23,7 @@ import contentStyles from '../styles/content.module.scss';
 export default function Content({ data }) {
   const {
     education,
+    languages,
     portfolioItems,
     publication,
     skillset,
@@ -43,19 +45,17 @@ export default function Content({ data }) {
         </div>
       </ContentItem>
       <ContentItem title="sample projects" icon={<MdPermMedia />}>
-        <div className="portfolio-items">
-          {portfolioItems.map((item, index) => (
-            <PortfolioSample
-              image={data[item.image].childImageSharp.fluid}
-              alt={item.alt}
-              title={item.title}
-              description={item.description}
-              technologies={item.technologies}
-              to={item.url}
-              key={item.title + index}
-            />
-          ))}
-        </div>
+        {portfolioItems.map((item, index) => (
+          <PortfolioSample
+            image={data[item.image].childImageSharp.fluid}
+            alt={item.alt}
+            title={item.title}
+            description={item.description}
+            technologies={item.technologies}
+            to={item.url}
+            key={item.title + index}
+          />
+        ))}
       </ContentItem>
       <div className={contentStyles.others}>
         <ContentItem title="work experience" icon={<MdWork />}>
@@ -76,16 +76,25 @@ export default function Content({ data }) {
             ></ExperienceDetails>
           ))}
         </ContentItem>
-        <ContentItem title="publications" icon={<MdLibraryBooks />}>
-          <Link
-            className="link"
-            to={publication.url}
-            target="_blank"
-            rel="noopener"
-          >
-            {publication.title} <MdOpenInNew />
-          </Link>
-        </ContentItem>
+        <div className={contentStyles.otherDetails}>
+          <ContentItem title="publications" icon={<MdLibraryBooks />}>
+            <Link
+              className="link"
+              to={publication.url}
+              target="_blank"
+              rel="noopener"
+            >
+              {publication.title} <MdOpenInNew />
+            </Link>
+          </ContentItem>
+          <ContentItem title="languages" icon={<MdLanguage />}>
+            <ul className={contentStyles.list}>
+              {languages.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </ContentItem>
+        </div>
         <ContentItem title="contact" icon={<MdMail />}>
           <Form />
         </ContentItem>
